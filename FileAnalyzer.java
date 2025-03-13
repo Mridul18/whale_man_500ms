@@ -45,6 +45,7 @@ public class FileAnalyzer {
         List<String> topKeys = wordCountMap.keySet()
                 .stream()
                 .limit(limit)
+                .sorted()
                 .toList();
 
         System.out.println("First " + limit + " elements:");

@@ -4,7 +4,6 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FileReader {
@@ -24,7 +23,7 @@ public class FileReader {
             return stream
                     .flatMap(line -> Arrays.stream(line.split(REGEX_FOR_WORD))) // Split by anything that isn't a letter, number, or apostrophe
                     .filter(word -> !word.isEmpty()) // Remove empty words
-                    .collect(Collectors.toList());
+                    .toList();
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage()); // Log the error
         }
